@@ -11,7 +11,7 @@ import static java.lang.Integer.parseInt;
  *
  * @author Dougla
  */
-public class Pessoa {
+public abstract class Pessoa {
     private String nome;
     private String dataNasc;
     private String endereco;

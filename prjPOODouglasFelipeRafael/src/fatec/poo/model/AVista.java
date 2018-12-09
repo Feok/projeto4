@@ -9,6 +9,31 @@ public class AVista {
     private int agencia;
     private int nCheque;
     private String preData;
+    private Matricula matricula;
+
+    public Matricula getMatricula() {
+        return matricula;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public int getnCheque() {
+        return nCheque;
+    }
+
+    public String getPreData() {
+        return preData;
+    }
+
+    public void setMatricula(Matricula matricula) {
+        this.matricula = matricula;
+    }
 
     public void setValor(double valor) {
         this.valor = valor;

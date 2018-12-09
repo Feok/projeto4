@@ -61,7 +61,7 @@ public class Turma {
         
     }
     
-    void setInstrutor(Instrutor instrutor) {
+    public void setInstrutor(Instrutor instrutor) {
         this.instrutor = instrutor;
     }
 

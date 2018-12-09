@@ -40,7 +40,7 @@ public class GuiMenu extends javax.swing.JFrame {
         MenuAluno = new javax.swing.JMenuItem();
         MenuSair = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        MenuAlocarInstrutor = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
@@ -103,13 +103,13 @@ public class GuiMenu extends javax.swing.JFrame {
 
         jMenu3.setText("Operações");
 
-        jMenuItem2.setText("Alocar Instrutor");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        MenuAlocarInstrutor.setText("Alocar Instrutor");
+        MenuAlocarInstrutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                MenuAlocarInstrutorActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem2);
+        jMenu3.add(MenuAlocarInstrutor);
 
         jMenuItem8.setText("Efetuar Matricula");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
@@ -137,9 +137,9 @@ public class GuiMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void MenuAlocarInstrutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAlocarInstrutorActionPerformed
+        new GuiAlocarInstrutor().setVisible(true);
+    }//GEN-LAST:event_MenuAlocarInstrutorActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
@@ -202,6 +202,7 @@ public class GuiMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem MenuAlocarInstrutor;
     private javax.swing.JMenuItem MenuAluno;
     private javax.swing.JMenuItem MenuCurso;
     private javax.swing.JMenuItem MenuInstrutor;
@@ -212,7 +213,6 @@ public class GuiMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;

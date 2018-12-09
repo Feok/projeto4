@@ -7,10 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import fatec.poo.model.Curso;
+import fatec.poo.model.Instrutor;
 
 public class DaoTurma {
     private Connection conn;
-    private ArrayList<String> cursos;
+    private ArrayList<String> turmas;
     
     public DaoTurma(Connection conn) {
          this.conn = conn;
@@ -21,7 +22,7 @@ public class DaoTurma {
         try {      
             ps = conn.prepareStatement("INSERT INTO tbTurma(sigla_turma, siglaCurso_turma, "
                     + "descricao_turma, dataInicio_turma, dataTermino_turma, periodo_turma, "
-                    + "qtdVagas_turma, observacoes_turma )"
+                    + "qtdVagas_turma, observacoes_turma) "
                     + "VALUES(?,?,?,?,?,?,?,?)");
             ps.setString(1, turma.getSiglaTurma());
             ps.setString(2, turma.getCurso().getSigla());
@@ -44,7 +45,6 @@ public class DaoTurma {
             ps = conn.prepareStatement("UPDATE tbTurma set siglaCurso_turma = ?, descricao_turma = ?, dataInicio_turma = ?, "
                                     + "dataTermino_turma = ?, periodo_turma = ?, qtdVagas_turma = ?, observacoes_turma = ? "
                                     + "WHERE sigla_turma = ? and siglaCurso_turma = ?");
-            
             
             ps.setString(1, turma.getCurso().getSigla());
             ps.setString(2, turma.getDescricao());
@@ -105,5 +105,50 @@ public class DaoTurma {
         }
     }
     
+    public ArrayList<String> listarTurmas(String siglaCurso){
+        PreparedStatement ps=null;
+        try{
+            ps = conn.prepareStatement("SELECT sigla_turma FROM tbTurma WHERE siglaCurso_turma = ?");
+
+            ps.setString(1, siglaCurso);
+
+            ResultSet rs = ps.executeQuery();
+
+            turmas = new ArrayList<String>();
+
+            while(rs.next() == true){
+                turmas.add(rs.getString("sigla_turma"));
+            }
+        }catch (SQLException ex){
+            System.out.println(ex.toString());
+        }
+        return turmas;
+    }
     
+    public void alocarInstrutor(Instrutor instrutor, Turma turma) {
+        PreparedStatement ps = null;
+        try {
+            ps = conn.prepareStatement("UPDATE tbTurma set cpf_instrutor = ? WHERE sigla_turma = ?");
+            
+            ps.setString(1, instrutor.getCpf());
+            ps.setString(2, turma.getSiglaTurma());
+            
+            ps.execute();
+        } catch (SQLException ex) {
+             System.out.println(ex.toString());   
+        }
+    }
+    
+    public void liberarInstrutor(Turma turma) {
+        PreparedStatement ps = null;
+        try {
+            ps = conn.prepareStatement("UPDATE tbTurma set cpf_instrutor = NULL WHERE sigla_turma = ?");
+            
+            ps.setString(1, turma.getSiglaTurma()); 
+
+            ps.execute();
+        } catch (SQLException ex) {
+             System.out.println(ex.toString());   
+        }
+    }  
 }

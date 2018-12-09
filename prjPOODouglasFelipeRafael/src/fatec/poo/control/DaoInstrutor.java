@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 public class DaoInstrutor {
 
     private Connection conn;
+    private ArrayList<String> instrutores;
     
     public DaoInstrutor(Connection conn) {
          this.conn = conn;
@@ -119,7 +120,7 @@ public class DaoInstrutor {
         return (ins);
     }    
      
-     public void excluir(Instrutor instrutor) {
+    public void excluir(Instrutor instrutor) {
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement("DELETE FROM tbInstrutor where cpf_instrutor = ?");
@@ -130,5 +131,42 @@ public class DaoInstrutor {
         } catch (SQLException ex) {
              System.out.println(ex.toString());   
         }
+    }
+     
+    public Instrutor consultarCpf(String nome) {
+        Instrutor i = null;
+        PreparedStatement ps = null;
+        try {
+            ps = conn.prepareStatement("SELECT cpf_instrutor FROM tbInstrutor WHERE nome_instrutor = ?");
+            
+            ps.setString(1, nome);
+            
+            ResultSet rs = ps.executeQuery();
+           
+            if (rs.next() == true) {
+                i = new Instrutor (rs.getString("cpf_instrutor"), nome);
+            }            
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());   
+        }
+        return(i);
+    }
+    
+    public ArrayList<String> listarInstrutores() {
+        PreparedStatement ps = null;
+        try{
+            ps = conn.prepareStatement("SELECT nome_instrutor, cpf_instrutor FROM tbInstrutor");
+            
+            ResultSet rs = ps.executeQuery();
+
+            instrutores = new ArrayList<String>();
+            
+            while(rs.next() == true){
+                instrutores.add(rs.getString("nome_instrutor"));
+            }
+        }catch (SQLException ex){
+            System.out.println(ex.toString());
+        }
+        return(instrutores);
     }
 }
