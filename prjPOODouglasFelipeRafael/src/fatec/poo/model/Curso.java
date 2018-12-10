@@ -2,10 +2,6 @@ package fatec.poo.model;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Dougla
- */
 public class Curso {
     private String sigla;
     private String nome;

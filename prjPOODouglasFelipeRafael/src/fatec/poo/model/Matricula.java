@@ -1,9 +1,5 @@
 package fatec.poo.model;
 
-/**
- *
- * @author Dougla
- */
 public class Matricula {
     private String data;
     private int qtdeFaltas;

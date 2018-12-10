@@ -3,7 +3,6 @@ package fatec.poo.view;
 import fatec.poo.control.Conexao;
 import fatec.poo.control.DaoAluno;
 import fatec.poo.model.Aluno;
-import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 import javax.swing.JOptionPane;
 

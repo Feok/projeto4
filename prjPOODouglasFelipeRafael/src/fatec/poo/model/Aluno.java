@@ -1,9 +1,5 @@
 package fatec.poo.model;
 
-/**
- *
- * @author Dougla
- */
 public class Aluno extends Pessoa{
     private String escolaridade;
     private Matricula matricula;

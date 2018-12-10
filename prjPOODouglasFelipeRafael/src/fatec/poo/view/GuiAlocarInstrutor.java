@@ -56,11 +56,14 @@ public class GuiAlocarInstrutor extends javax.swing.JFrame {
             }
         });
 
+        cmbbxTurma.setEnabled(false);
         cmbbxTurma.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cmbbxTurmaItemStateChanged(evt);
             }
         });
+
+        cmbbxInstrutor.setEnabled(false);
 
         txtSituacao.setEnabled(false);
 

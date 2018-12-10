@@ -2,10 +2,6 @@ package fatec.poo.model;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Dougla
- */
 public class Instrutor extends Pessoa{
 
     private String formacao;

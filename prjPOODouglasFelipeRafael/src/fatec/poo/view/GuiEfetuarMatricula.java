@@ -33,8 +33,8 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
         btnSair = new javax.swing.JButton();
         txtNome = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        jrbtAVista = new javax.swing.JRadioButton();
-        jrbtParcelado = new javax.swing.JRadioButton();
+        rdbtnAVista = new javax.swing.JRadioButton();
+        rdbtnParcelado = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -45,8 +45,8 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
         txtJuros = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        txtDtPagto = new javax.swing.JFormattedTextField();
-        txtDtVencto = new javax.swing.JFormattedTextField();
+        jftxtDataPagto = new javax.swing.JFormattedTextField();
+        jftxtData1Vencto = new javax.swing.JFormattedTextField();
         btnConsultar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         btnInserir = new javax.swing.JButton();
@@ -54,10 +54,10 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
         btnAlterar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         btnExcluir = new javax.swing.JButton();
-        jtxtDtMatricula = new javax.swing.JFormattedTextField();
-        cbCurso = new javax.swing.JComboBox<>();
-        cbTurma = new javax.swing.JComboBox<>();
-        jtxtCpfAluno = new javax.swing.JFormattedTextField();
+        jftxtDataMatricula = new javax.swing.JFormattedTextField();
+        cmbbxCurso = new javax.swing.JComboBox<>();
+        cmbbxTurma = new javax.swing.JComboBox<>();
+        jftxtCpfAluno = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
@@ -89,30 +89,30 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Pagamento"));
         jPanel1.setToolTipText("");
 
-        jrbtAVista.setSelected(true);
-        jrbtAVista.setText("À Vista");
-        jrbtAVista.setEnabled(false);
-        jrbtAVista.addItemListener(new java.awt.event.ItemListener() {
+        rdbtnAVista.setSelected(true);
+        rdbtnAVista.setText("À Vista");
+        rdbtnAVista.setEnabled(false);
+        rdbtnAVista.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jrbtAVistaItemStateChanged(evt);
+                rdbtnAVistaItemStateChanged(evt);
             }
         });
-        jrbtAVista.addActionListener(new java.awt.event.ActionListener() {
+        rdbtnAVista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jrbtAVistaActionPerformed(evt);
+                rdbtnAVistaActionPerformed(evt);
             }
         });
 
-        jrbtParcelado.setText("Parcelado");
-        jrbtParcelado.setEnabled(false);
-        jrbtParcelado.addItemListener(new java.awt.event.ItemListener() {
+        rdbtnParcelado.setText("Parcelado");
+        rdbtnParcelado.setEnabled(false);
+        rdbtnParcelado.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jrbtParceladoItemStateChanged(evt);
+                rdbtnParceladoItemStateChanged(evt);
             }
         });
-        jrbtParcelado.addMouseListener(new java.awt.event.MouseAdapter() {
+        rdbtnParcelado.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jrbtParceladoMouseClicked(evt);
+                rdbtnParceladoMouseClicked(evt);
             }
         });
 
@@ -137,18 +137,18 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
         jLabel12.setText("Data 1º Vencto.");
 
         try {
-            txtDtPagto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            jftxtDataPagto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtDtPagto.setEnabled(false);
+        jftxtDataPagto.setEnabled(false);
 
         try {
-            txtDtVencto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            jftxtData1Vencto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtDtVencto.setEnabled(false);
+        jftxtData1Vencto.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -157,8 +157,8 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jrbtAVista)
-                    .addComponent(jrbtParcelado))
+                    .addComponent(rdbtnAVista)
+                    .addComponent(rdbtnParcelado))
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -182,12 +182,12 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addGap(18, 18, 18)
-                        .addComponent(txtDtVencto, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jftxtData1Vencto, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtDtPagto, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jftxtDataPagto, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -195,13 +195,13 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jrbtAVista)
+                    .addComponent(rdbtnAVista)
                     .addComponent(jLabel7)
                     .addComponent(txtAgencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
                     .addComponent(txtCheque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
-                    .addComponent(txtDtPagto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jftxtDataPagto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -209,8 +209,8 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
                     .addComponent(txtQtdeMensaldiades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtJuros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
-                    .addComponent(jrbtParcelado)
-                    .addComponent(txtDtVencto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rdbtnParcelado)
+                    .addComponent(jftxtData1Vencto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -256,37 +256,37 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
         });
 
         try {
-            jtxtDtMatricula.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            jftxtDataMatricula.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
-        cbCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar o Curso" }));
-        cbCurso.addActionListener(new java.awt.event.ActionListener() {
+        cmbbxCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar o Curso" }));
+        cmbbxCurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbCursoActionPerformed(evt);
+                cmbbxCursoActionPerformed(evt);
             }
         });
 
-        cbTurma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar a Turma" }));
-        cbTurma.setEnabled(false);
-        cbTurma.addItemListener(new java.awt.event.ItemListener() {
+        cmbbxTurma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar a Turma" }));
+        cmbbxTurma.setEnabled(false);
+        cmbbxTurma.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cbTurmaItemStateChanged(evt);
+                cmbbxTurmaItemStateChanged(evt);
             }
         });
-        cbTurma.addActionListener(new java.awt.event.ActionListener() {
+        cmbbxTurma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbTurmaActionPerformed(evt);
+                cmbbxTurmaActionPerformed(evt);
             }
         });
 
         try {
-            jtxtCpfAluno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            jftxtCpfAluno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jtxtCpfAluno.setEnabled(false);
+        jftxtCpfAluno.setEnabled(false);
 
         jLabel5.setText("Valor");
 
@@ -322,9 +322,9 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jtxtCpfAluno)
-                                    .addComponent(cbTurma, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jtxtDtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jftxtCpfAluno)
+                                    .addComponent(cmbbxTurma, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jftxtDataMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(49, 49, 49)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -335,7 +335,7 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(cbCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(cmbbxCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -344,26 +344,26 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jtxtDtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jftxtDataMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(cbCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5)
-                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(cmbbxCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(cbTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbbxTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jtxtCpfAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLabel6)
+                        .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jftxtCpfAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -383,82 +383,84 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
-    private void jrbtAVistaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jrbtAVistaItemStateChanged
+    private void rdbtnAVistaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbtnAVistaItemStateChanged
 
-    }//GEN-LAST:event_jrbtAVistaItemStateChanged
+    }//GEN-LAST:event_rdbtnAVistaItemStateChanged
 
-    private void jrbtAVistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbtAVistaActionPerformed
-        if (jrbtAVista.isSelected()) {
+    private void rdbtnAVistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbtnAVistaActionPerformed
+        if (rdbtnAVista.isSelected()) {
             txtAgencia.setEnabled(true);
             txtCheque.setEnabled(true);
-            txtDtPagto.setEnabled(true);
+            jftxtDataPagto.setEnabled(true);
+            rdbtnParcelado.setSelected(false);
         } else {
             txtAgencia.setEnabled(false);
             txtCheque.setEnabled(false);
-            txtDtPagto.setEnabled(false);
+            jftxtDataPagto.setEnabled(false);
         }
-        if (jrbtParcelado.isSelected()) {
+        if (rdbtnParcelado.isSelected()) {
             txtQtdeMensaldiades.setEnabled(true);
             txtJuros.setEnabled(true);
-            txtDtVencto.setEnabled(true);
+            jftxtData1Vencto.setEnabled(true);
         } else {
             txtQtdeMensaldiades.setEnabled(false);
             txtJuros.setEnabled(false);
-            txtDtVencto.setEnabled(false);
+            jftxtData1Vencto.setEnabled(false);
         }
-    }//GEN-LAST:event_jrbtAVistaActionPerformed
+    }//GEN-LAST:event_rdbtnAVistaActionPerformed
 
-    private void jrbtParceladoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jrbtParceladoItemStateChanged
-        if (jrbtParcelado.isSelected()) {
+    private void rdbtnParceladoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbtnParceladoItemStateChanged
+        if (rdbtnParcelado.isSelected()) {
             txtQtdeMensaldiades.setEnabled(true);
             txtJuros.setEnabled(true);
-            txtDtVencto.setEnabled(true);
+            jftxtData1Vencto.setEnabled(true);
+            rdbtnAVista.setSelected(false);
         } else {
             txtQtdeMensaldiades.setEnabled(false);
             txtJuros.setEnabled(false);
-            txtDtVencto.setEnabled(false);
+            jftxtData1Vencto.setEnabled(false);
         }
-        if (jrbtAVista.isSelected()) {
+        if (rdbtnAVista.isSelected()) {
             txtAgencia.setEnabled(true);
             txtCheque.setEnabled(true);
-            txtDtPagto.setEnabled(true);
+            jftxtDataPagto.setEnabled(true);
         } else {
             txtAgencia.setEnabled(false);
             txtCheque.setEnabled(false);
-            txtDtPagto.setEnabled(false);
+            jftxtDataPagto.setEnabled(false);
         }
-    }//GEN-LAST:event_jrbtParceladoItemStateChanged
+    }//GEN-LAST:event_rdbtnParceladoItemStateChanged
 
-    private void jrbtParceladoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jrbtParceladoMouseClicked
+    private void rdbtnParceladoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rdbtnParceladoMouseClicked
 
-    }//GEN-LAST:event_jrbtParceladoMouseClicked
+    }//GEN-LAST:event_rdbtnParceladoMouseClicked
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         aluno = null;
-        aluno = daoAluno.consultar(jtxtCpfAluno.getText().replace(".", "").replace("-", ""));
-        curso = daoCurso.consultar((String) cbCurso.getSelectedItem());
+        aluno = daoAluno.consultar(jftxtCpfAluno.getText().replace(".", "").replace("-", ""));
+        curso = daoCurso.consultar((String) cmbbxCurso.getSelectedItem());
 
-        if (Aluno.validarCPF(jtxtCpfAluno.getText())) {
+        if (Aluno.validarCPF(jftxtCpfAluno.getText())) {
             if (aluno == null) {
                 JOptionPane.showMessageDialog(null, "O CPF digitado não é um aluno cadastrado", "Erro de validação", JOptionPane.ERROR_MESSAGE);
             }
             else{
                 txtNome.setText(aluno.getNome());
                 txtValor.setText(String.valueOf(curso.getValor()));
-                matricula = daoMatricula.consultar(jtxtCpfAluno.getText().replace(".", "").replace("-", ""), (String) cbTurma.getSelectedItem(), (String) cbCurso.getSelectedItem());
+                matricula = daoMatricula.consultar(jftxtCpfAluno.getText().replace(".", "").replace("-", ""), (String) cmbbxTurma.getSelectedItem(), (String) cmbbxCurso.getSelectedItem());
                 if (matricula == null) {
-                    jrbtAVista.setEnabled(true);
-                    jrbtParcelado.setEnabled(true);
-                    if (jrbtAVista.isSelected()) {
+                    rdbtnAVista.setEnabled(true);
+                    rdbtnParcelado.setEnabled(true);
+                    if (rdbtnAVista.isSelected()) {
                         txtAgencia.setEnabled(true);
                         txtCheque.setEnabled(true);
-                        txtDtPagto.setEnabled(true);
+                        jftxtDataPagto.setEnabled(true);
                     }
                     else
                     {
                         txtJuros.setEnabled(true);
                         txtQtdeMensaldiades.setEnabled(true);
-                        txtDtVencto.setEnabled(true);
+                        jftxtData1Vencto.setEnabled(true);
                     }
                     btnInserir.setEnabled(true);
                     btnExcluir.setEnabled(false);
@@ -470,45 +472,43 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
                     avista=daoAVista.consultar(matricula.getData(), matricula.getAluno().getCpf(), matricula.getTurma());
                     aprazo=daoAPrazo.consultar(matricula.getData(), matricula.getAluno().getCpf(), matricula.getTurma());
 
-                    jtxtDtMatricula.setText(matricula.getData());
+                    jftxtDataMatricula.setText(matricula.getData());
                     if(aprazo==null)
                     {
-                        jrbtAVista.setSelected(true);
-                        jrbtParcelado.setSelected(false);
                         txtAgencia.setText(String.valueOf(avista.getAgencia()));
                         txtCheque.setText(String.valueOf(avista.getnCheque()));
-                        txtDtPagto.setText(avista.getPreData());
+                        jftxtDataPagto.setText(avista.getPreData());
 
                         txtAgencia.setEnabled(true);
                         txtCheque.setEnabled(true);
-                        txtDtPagto.setEnabled(true);
-                        jrbtParcelado.setEnabled(false);
+                        jftxtDataPagto.setEnabled(true);
+                        rdbtnParcelado.setEnabled(false);
 
-                        jtxtDtMatricula.setEnabled(false);
-                        cbCurso.setEnabled(false);
-                        cbTurma.setEnabled(false);
-                        jtxtCpfAluno.setEnabled(false);
+                        jftxtDataMatricula.setEnabled(false);
+                        cmbbxCurso.setEnabled(false);
+                        cmbbxTurma.setEnabled(false);
+                        jftxtCpfAluno.setEnabled(false);
                         btnAlterar.setEnabled(true);
                         btnConsultar.setEnabled(false);
                         btnInserir.setEnabled(false);
                         btnExcluir.setEnabled(true);
                     }
                     else {
-                        jrbtAVista.setSelected(false);
-                        jrbtParcelado.setSelected(true);
+                        rdbtnAVista.setSelected(false);
+                        rdbtnParcelado.setSelected(true);
                         txtJuros.setText(String.valueOf(aprazo.getTaxaJuros()*100));
                         txtQtdeMensaldiades.setText(String.valueOf(aprazo.getQtdeMensalidade()));
-                        txtDtVencto.setText(aprazo.getDtVencimento());
+                        jftxtData1Vencto.setText(aprazo.getDtVencimento());
 
                         txtJuros.setEnabled(true);
                         txtQtdeMensaldiades.setEnabled(true);
-                        txtDtVencto.setEnabled(true);
-                        jrbtAVista.setEnabled(false);
+                        jftxtData1Vencto.setEnabled(true);
+                        rdbtnAVista.setEnabled(false);
 
-                        jtxtDtMatricula.setEnabled(false);
-                        cbCurso.setEnabled(false);
-                        cbTurma.setEnabled(false);
-                        jtxtCpfAluno.setEnabled(false);
+                        jftxtDataMatricula.setEnabled(false);
+                        cmbbxCurso.setEnabled(false);
+                        cmbbxTurma.setEnabled(false);
+                        jftxtCpfAluno.setEnabled(false);
                         btnAlterar.setEnabled(true);
                         btnConsultar.setEnabled(false);
                         btnInserir.setEnabled(false);
@@ -523,58 +523,58 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
-        curso = daoCurso.consultar((String) cbCurso.getSelectedItem());
-        aluno = daoAluno.consultar(jtxtCpfAluno.getText().replace(".", "").replace("-", ""));
-        turma = daoTurma.consultar((String) cbTurma.getSelectedItem(), curso);
-        matricula = new Matricula(jtxtDtMatricula.getText().replace("/", ""));
+        curso = daoCurso.consultar((String) cmbbxCurso.getSelectedItem());
+        aluno = daoAluno.consultar(jftxtCpfAluno.getText().replace(".", "").replace("-", ""));
+        turma = daoTurma.consultar((String) cmbbxTurma.getSelectedItem(), curso);
+        matricula = new Matricula(jftxtDataMatricula.getText().replace("/", ""));
         matricula.setAluno(aluno);
         matricula.setTurma(turma);
         turma.addMatricula(matricula);
 
-        if (jrbtAVista.isSelected()) {
+        if (rdbtnAVista.isSelected()) {
             avista = new AVista();
             avista.setAgencia(Integer.parseInt(txtAgencia.getText()));
             avista.setnCheque(Integer.parseInt(txtCheque.getText()));
-            avista.setPreData(txtDtPagto.getText().replace("/", ""));
+            avista.setPreData(jftxtDataPagto.getText().replace("/", ""));
             avista.setValor(parseDouble(txtValor.getText()));
             avista.setMatricula(matricula);
             daoAVista.inserir(avista);
         } else {
             aprazo = new APrazo();
-            aprazo.setDtVencimento(txtDtVencto.getText().replace("/",""));
+            aprazo.setDtVencimento(jftxtData1Vencto.getText().replace("/",""));
             aprazo.setTaxaJuros(parseDouble(txtJuros.getText())/100);
             aprazo.setValor(parseDouble(txtValor.getText()));
             aprazo.setQtdeMensalidade(parseInt(txtQtdeMensaldiades.getText()));
             aprazo.setMatricula(matricula);
             daoAPrazo.inserir(aprazo);
         }
-        //System.out.println("SIGLA " + matricula.getTurma().getSiglaTurma());
+        
         daoMatricula.inserir(matricula);
-        jtxtDtMatricula.setText("");
+        jftxtDataMatricula.setText("");
         txtAgencia.setText("");
         txtCheque.setText("");
-        txtDtPagto.setText("");
+        jftxtDataPagto.setText("");
         txtJuros.setText("");
         txtQtdeMensaldiades.setText("");
-        txtDtVencto.setText("");
+        jftxtData1Vencto.setText("");
         txtValor.setText("");
         txtNome.setText("");
-        cbCurso.setSelectedIndex(0);
-        cbTurma.setSelectedIndex(0);
-        jtxtCpfAluno.setText("");
+        cmbbxCurso.setSelectedIndex(0);
+        cmbbxTurma.setSelectedIndex(0);
+        jftxtCpfAluno.setText("");
 
-        jtxtDtMatricula.setEnabled(true);
+        jftxtDataMatricula.setEnabled(true);
         txtAgencia.setEnabled(false);
         txtCheque.setEnabled(false);
-        txtDtPagto.setEnabled(false);
+        jftxtDataPagto.setEnabled(false);
         txtJuros.setEnabled(false);
         txtQtdeMensaldiades.setEnabled(false);
-        txtDtVencto.setEnabled(false);
-        jtxtCpfAluno.setEnabled(false);
-        jrbtAVista.setEnabled(false);
-        jrbtParcelado.setEnabled(false);
-        cbCurso.requestFocus();
-        jrbtAVista.setSelected(true);
+        jftxtData1Vencto.setEnabled(false);
+        jftxtCpfAluno.setEnabled(false);
+        rdbtnAVista.setEnabled(false);
+        rdbtnParcelado.setEnabled(false);
+        cmbbxCurso.requestFocus();
+        rdbtnAVista.setSelected(true);
 
         btnConsultar.setEnabled(true);
         btnAlterar.setEnabled(false);
@@ -583,14 +583,14 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInserirActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-        if (JOptionPane.showConfirmDialog(null, "Confirma alteração?")== 0){//Sim
+        if (JOptionPane.showConfirmDialog(null, "Confirma alteração?")== 0){
 
             if(aprazo == null)
             {
                 avista.setValor(Double.parseDouble(txtValor.getText()));
                 avista.setAgencia(Integer.parseInt(txtAgencia.getText()));
                 avista.setnCheque(Integer.parseInt(txtCheque.getText()));
-                avista.setPreData(txtDtPagto.getText().replace("/", ""));
+                avista.setPreData(jftxtDataPagto.getText().replace("/", ""));
                 daoAVista.alterar(avista);
             }
             else
@@ -598,39 +598,39 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
                 aprazo.setValor(Double.parseDouble(txtValor.getText()));
                 aprazo.setTaxaJuros(Double.parseDouble(txtJuros.getText())/100);
                 aprazo.setQtdeMensalidade(Integer.parseInt(txtQtdeMensaldiades.getText()));
-                aprazo.setDtVencimento(txtDtVencto.getText().replace("/", ""));
+                aprazo.setDtVencimento(jftxtData1Vencto.getText().replace("/", ""));
                 daoAPrazo.alterar(aprazo);
 
             }
 
         }
 
-        jtxtDtMatricula.setText("");
+        jftxtDataMatricula.setText("");
         txtAgencia.setText("");
         txtCheque.setText("");
-        txtDtPagto.setText("");
+        jftxtDataPagto.setText("");
         txtJuros.setText("");
         txtQtdeMensaldiades.setText("");
-        txtDtVencto.setText("");
+        jftxtData1Vencto.setText("");
         txtValor.setText("");
         txtNome.setText("");
-        cbCurso.setSelectedIndex(0);
-        cbCurso.setEnabled(true);
-        cbTurma.setSelectedIndex(0);
-        cbTurma.setEnabled(false);
-        jtxtCpfAluno.setText("");
+        cmbbxCurso.setSelectedIndex(0);
+        cmbbxCurso.setEnabled(true);
+        cmbbxTurma.setSelectedIndex(0);
+        cmbbxTurma.setEnabled(false);
+        jftxtCpfAluno.setText("");
 
-        jtxtDtMatricula.setEnabled(true);
+        jftxtDataMatricula.setEnabled(true);
         txtAgencia.setEnabled(false);
         txtCheque.setEnabled(false);
-        txtDtPagto.setEnabled(false);
+        jftxtDataPagto.setEnabled(false);
         txtJuros.setEnabled(false);
         txtQtdeMensaldiades.setEnabled(false);
-        txtDtVencto.setEnabled(false);
-        jtxtCpfAluno.setEnabled(false);
-        jrbtAVista.setEnabled(false);
-        jrbtParcelado.setEnabled(false);
-        jtxtDtMatricula.requestFocus();
+        jftxtData1Vencto.setEnabled(false);
+        jftxtCpfAluno.setEnabled(false);
+        rdbtnAVista.setEnabled(false);
+        rdbtnParcelado.setEnabled(false);
+        jftxtDataMatricula.requestFocus();
 
         btnConsultar.setEnabled(true);
         btnAlterar.setEnabled(false);
@@ -649,66 +649,64 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
             }
             daoMatricula.excluir(matricula);
 
-            jtxtDtMatricula.setText("");
+            jftxtDataMatricula.setText("");
             txtAgencia.setText("");
             txtCheque.setText("");
-            txtDtPagto.setText("");
+            jftxtDataPagto.setText("");
             txtJuros.setText("");
             txtQtdeMensaldiades.setText("");
-            txtDtVencto.setText("");
+            jftxtData1Vencto.setText("");
             txtValor.setText("");
             txtNome.setText("");
-            cbCurso.setSelectedIndex(0);
-            cbCurso.setEnabled(true);
-            cbTurma.setSelectedIndex(0);
-            cbTurma.setEnabled(false);
-            jtxtCpfAluno.setText("");
+            cmbbxCurso.setSelectedIndex(0);
+            cmbbxCurso.setEnabled(true);
+            cmbbxTurma.setSelectedIndex(0);
+            cmbbxTurma.setEnabled(false);
+            jftxtCpfAluno.setText("");
 
-            jtxtDtMatricula.setEnabled(true);
+            jftxtDataMatricula.setEnabled(true);
             txtAgencia.setEnabled(false);
             txtCheque.setEnabled(false);
-            txtDtPagto.setEnabled(false);
+            jftxtDataPagto.setEnabled(false);
             txtJuros.setEnabled(false);
             txtQtdeMensaldiades.setEnabled(false);
-            txtDtVencto.setEnabled(false);
-            jtxtCpfAluno.setEnabled(false);
-            jrbtAVista.setEnabled(false);
-            jrbtParcelado.setEnabled(false);
-            jtxtDtMatricula.requestFocus();
-            jrbtAVista.setSelected(true);
+            jftxtData1Vencto.setEnabled(false);
+            jftxtCpfAluno.setEnabled(false);
+            rdbtnAVista.setEnabled(false);
+            rdbtnParcelado.setEnabled(false);
+            jftxtDataMatricula.requestFocus();
+            rdbtnAVista.setSelected(true);
 
             btnConsultar.setEnabled(true);
             btnAlterar.setEnabled(false);
             btnInserir.setEnabled(false);
             btnExcluir.setEnabled(false);
-
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
-    private void cbCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCursoActionPerformed
-        cbTurma.removeAllItems();
-        cbTurma.addItem("Selecione a Turma");
-        ArrayList<String> turmas = daoTurma.listarTurmas((String) cbCurso.getSelectedItem());
+    private void cmbbxCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbbxCursoActionPerformed
+        cmbbxTurma.removeAllItems();
+        cmbbxTurma.addItem("Selecione a Turma");
+        ArrayList<String> turmas = daoTurma.listarTurmas((String) cmbbxCurso.getSelectedItem());
 
         for (int x = 0; x < turmas.size(); x++) {
-            cbTurma.addItem(turmas.get(x));
+            cmbbxTurma.addItem(turmas.get(x));
         }
-        cbTurma.setEnabled(true);
-    }//GEN-LAST:event_cbCursoActionPerformed
+        cmbbxTurma.setEnabled(true);
+    }//GEN-LAST:event_cmbbxCursoActionPerformed
 
-    private void cbTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbTurmaItemStateChanged
-        if (cbTurma.getSelectedIndex() > 0 && cbCurso.getSelectedIndex() > 0) {
-            //System.out.println("Index turma: " + cbTurma.getSelectedIndex() + "Index Curso: " + cbCurso.getSelectedIndex());
-            jtxtCpfAluno.setEnabled(true);
+    private void cmbbxTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbbxTurmaItemStateChanged
+        if (cmbbxTurma.getSelectedIndex() > 0 && cmbbxCurso.getSelectedIndex() > 0) {
+            jftxtCpfAluno.setEnabled(true);
         }
         else{
-            jtxtCpfAluno.setEnabled(false);
+            jftxtCpfAluno.setEnabled(false);
         }
-    }//GEN-LAST:event_cbTurmaItemStateChanged
+    }//GEN-LAST:event_cmbbxTurmaItemStateChanged
 
-    private void cbTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTurmaActionPerformed
+    private void cmbbxTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbbxTurmaActionPerformed
 
-    }//GEN-LAST:event_cbTurmaActionPerformed
+    }//GEN-LAST:event_cmbbxTurmaActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         conexao = new Conexao("root", "root");
@@ -724,7 +722,7 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
         ArrayList<String> cursos = daoCurso.listarSiglas();
 
         for (int x = 0; x < cursos.size(); x++) {
-            cbCurso.addItem(cursos.get(x));
+            cmbbxCurso.addItem(cursos.get(x));
         }
     }//GEN-LAST:event_formWindowOpened
 
@@ -774,8 +772,8 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnInserir;
     private javax.swing.JButton btnSair;
-    private javax.swing.JComboBox<String> cbCurso;
-    private javax.swing.JComboBox<String> cbTurma;
+    private javax.swing.JComboBox<String> cmbbxCurso;
+    private javax.swing.JComboBox<String> cmbbxTurma;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -789,14 +787,14 @@ public class GuiEfetuarMatricula extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jrbtAVista;
-    private javax.swing.JRadioButton jrbtParcelado;
-    private javax.swing.JFormattedTextField jtxtCpfAluno;
-    private javax.swing.JFormattedTextField jtxtDtMatricula;
+    private javax.swing.JFormattedTextField jftxtCpfAluno;
+    private javax.swing.JFormattedTextField jftxtData1Vencto;
+    private javax.swing.JFormattedTextField jftxtDataMatricula;
+    private javax.swing.JFormattedTextField jftxtDataPagto;
+    private javax.swing.JRadioButton rdbtnAVista;
+    private javax.swing.JRadioButton rdbtnParcelado;
     private javax.swing.JTextField txtAgencia;
     private javax.swing.JTextField txtCheque;
-    private javax.swing.JFormattedTextField txtDtPagto;
-    private javax.swing.JFormattedTextField txtDtVencto;
     private javax.swing.JTextField txtJuros;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtQtdeMensaldiades;

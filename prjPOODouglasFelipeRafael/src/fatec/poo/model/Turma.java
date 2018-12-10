@@ -2,10 +2,6 @@ package fatec.poo.model;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Dougla
- */
 public class Turma {
     private String siglaTurma;
     private String descricao;

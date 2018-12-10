@@ -1,9 +1,5 @@
 package fatec.poo.model;
 
-/**
- *
- * @author Dougla
- */
 public class APrazo {
     private double valor;
     private String dtVencimento;

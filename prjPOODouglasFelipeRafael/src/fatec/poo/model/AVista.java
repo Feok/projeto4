@@ -1,9 +1,5 @@
 package fatec.poo.model;
 
-/**
- *
- * @author fedqu
- */
 public class AVista {
     private double valor;
     private int agencia;
