@@ -42,8 +42,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txtSituacao" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
                           <Component id="cmbbxCurso" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
-                          <Component id="cmbbxTurma" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
                           <Component id="cmbbxInstrutor" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                          <Component id="cmbbxTurma" alignment="0" min="-2" pref="208" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="163" max="-2" attributes="0"/>
                   </Group>
@@ -155,6 +155,9 @@
         </Property>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbbxInstrutorActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>

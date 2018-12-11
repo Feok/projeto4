@@ -82,6 +82,7 @@ public class DaoTurma {
                 t.setPeriodo(rs.getString("periodo_turma"));
                 t.setQtdVagas(rs.getInt("qtdVagas_turma"));
                 t.setObservacoes(rs.getString("observacoes_turma"));
+                t.setInstrutor(new DaoInstrutor(conn).consultar(rs.getString("cpf_instrutor")));
                 curso.addTurma(t);                
             }
         }

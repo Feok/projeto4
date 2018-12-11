@@ -64,6 +64,11 @@ public class GuiAlocarInstrutor extends javax.swing.JFrame {
         });
 
         cmbbxInstrutor.setEnabled(false);
+        cmbbxInstrutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbbxInstrutorActionPerformed(evt);
+            }
+        });
 
         txtSituacao.setEnabled(false);
 
@@ -109,8 +114,8 @@ public class GuiAlocarInstrutor extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cmbbxCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbbxTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbbxInstrutor, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cmbbxInstrutor, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbbxTurma, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnAlocar)
@@ -156,7 +161,7 @@ public class GuiAlocarInstrutor extends javax.swing.JFrame {
 
     private void cmbbxCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbbxCursoActionPerformed
         cmbbxTurma.removeAllItems();
-        cmbbxTurma.addItem("Selecione a Turma");
+        cmbbxTurma.addItem("Selecione aqui");
         ArrayList<String> turmas = daoTurma.listarTurmas((String) cmbbxCurso.getSelectedItem());
 
         for (int x=0; x<turmas.size(); x++){
@@ -167,8 +172,8 @@ public class GuiAlocarInstrutor extends javax.swing.JFrame {
 
     private void cmbbxTurmaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbbxTurmaItemStateChanged
         if(cmbbxCurso.getSelectedIndex() > 0 && cmbbxTurma.getSelectedIndex() > 0){
-            turma=null;
-            curso=null;
+            turma = null;
+            curso = null;
             curso = daoCurso.consultar(String.valueOf(cmbbxCurso.getSelectedItem()));
             turma = daoTurma.consultar((String) cmbbxTurma.getSelectedItem(), curso);
 
@@ -186,7 +191,6 @@ public class GuiAlocarInstrutor extends javax.swing.JFrame {
                 txtSituacao.setText("");
                 btnAlocar.setEnabled(true);
                 btnLiberar.setEnabled(false);
-
             }
         }
     }//GEN-LAST:event_cmbbxTurmaItemStateChanged
@@ -208,7 +212,6 @@ public class GuiAlocarInstrutor extends javax.swing.JFrame {
 
         cmbbxTurma.setEnabled(false);
         cmbbxInstrutor.setEnabled(false);
-
     }//GEN-LAST:event_btnAlocarActionPerformed
 
     private void btnLiberarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLiberarActionPerformed
@@ -223,7 +226,6 @@ public class GuiAlocarInstrutor extends javax.swing.JFrame {
         cmbbxTurma.setEnabled(false);
         cmbbxCurso.setEnabled(true);
         cmbbxInstrutor.setEnabled(true);
-
     }//GEN-LAST:event_btnLiberarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
@@ -255,6 +257,10 @@ public class GuiAlocarInstrutor extends javax.swing.JFrame {
         conexao.fecharConexao();
         dispose();
     }//GEN-LAST:event_formWindowClosed
+
+    private void cmbbxInstrutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbbxInstrutorActionPerformed
+        
+    }//GEN-LAST:event_cmbbxInstrutorActionPerformed
 
     /**
      * @param args the command line arguments
